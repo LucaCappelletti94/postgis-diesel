@@ -13,7 +13,10 @@ license = "MIT"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-diesel = { version = "2.2", default-features = false, optional = true }
+diesel = { git = "https://github.com/diesel-rs/diesel", branch = "main", features = [
+	"returning_clauses_for_sqlite_3_35",
+	"postgres",
+], optional = true }
 byteorder = "1.4"
 serde = { version = "1.0", optional = true, features = ["derive"] }
 schemars = { version = "0.8.20", optional = true }
